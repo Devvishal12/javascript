@@ -1,0 +1,192 @@
+/*
+=========================
+    JavaScript Notes
+=========================
+*/
+
+// 1️⃣ VARIABLES & DATA TYPES
+// JavaScript has three ways to declare variables:
+// - var: Function-scoped, can be redeclared and updated.
+// - let: Block-scoped, can be updated but not redeclared.
+// - const: Block-scoped, cannot be updated or redeclared.
+
+let name = "Vishal";  // String
+let age = 23;          // Number
+let isStudent = true;  // Boolean
+let marks;             // Undefined
+let city = null;       // Null
+
+console.log(typeof name, typeof age, typeof isStudent, typeof marks, typeof city);
+
+// 2️⃣ TYPE CONVERSION
+// JavaScript allows implicit and explicit type conversion.
+let strToNum = Number("45"); // "45" => 45 (Explicit conversion)
+let numToStr = String(100);   // 100 => "100"
+let boolToNum = Number(true); // true => 1
+
+// 3️⃣ OPERATORS
+// JavaScript supports arithmetic, comparison, logical, bitwise, and assignment operators.
+let a = 10, b = 5;
+console.log(a + b, a - b, a * b, a / b, a % b, a ** b);
+
+// 4️⃣ CONDITIONAL STATEMENTS
+// Used for decision-making.
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}
+
+// 5️⃣ LOOPS
+// Used to execute a block of code multiple times.
+for (let i = 1; i <= 5; i++) {
+    console.log("Iteration", i);
+}
+
+let j = 0;
+while (j < 5) {
+    console.log("While loop iteration", j);
+    j++;
+}
+
+// 6️⃣ FUNCTIONS
+// Functions are reusable blocks of code.
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(greet("Vishal"));
+
+const add = (x, y) => x + y;  // Arrow function example
+console.log(add(5, 10));
+
+// 7️⃣ ARRAYS
+// Arrays are ordered collections of values.
+let fruits = ["Apple", "Banana", "Mango"];
+fruits.push("Orange"); // Add element
+console.log(fruits[1]); // Access element
+
+fruits.forEach(fruit => console.log(fruit)); // Iterating over an array
+
+// 8️⃣ OBJECTS
+// Objects store key-value pairs.
+let person = {
+    name: "Vishal",
+    age: 23,
+    country: "India",
+    greet() {
+        return `Hi, I'm ${this.name} from ${this.country}`;
+    }
+};
+console.log(person.name, person.age);
+console.log(person.greet());
+
+// 9️⃣ HIGHER-ORDER FUNCTIONS
+// Functions that take other functions as arguments.
+let numbers = [1, 2, 3, 4, 5];
+let squaredNumbers = numbers.map(num => num ** 2);
+console.log(squaredNumbers);
+
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers);
+
+// 🔟 ASYNCHRONOUS JAVASCRIPT
+setTimeout(() => console.log("Executed after 2 seconds"), 2000);
+
+// ✅ PROMISES
+// Promises handle asynchronous operations.
+let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Data Fetched!"), 3000);
+});
+promise.then(response => console.log(response)).catch(err => console.log("Error: ", err));
+
+// 🔥 ASYNC-AWAIT
+// A modern way to handle asynchronous code.
+async function fetchData() {
+    let result = await promise;
+    console.log(result);
+}
+fetchData();
+
+/*
+=========================
+    Core Features
+=========================
+*/
+
+// VARIABLES: var (function-scoped), let/const (block-scoped, ES6)
+// DATA TYPES: number, string, boolean, undefined, null, bigint, symbol
+// FUNCTIONS: First-class, closures, arrow functions (=>, ES6)
+// OBJECTS: Key-value pairs, prototypal inheritance, class syntax (ES6)
+// CONTROL FLOW: if, switch, for, while, etc.
+// ASYNC: Callbacks, Promises, async/await (ES2017)
+// DOM: Manipulates webpage content (document.getElementById)
+// EVENTS: Handles user actions (onclick)
+
+/*
+=========================
+    Key Concepts
+=========================
+*/
+
+// HOISTING: Variable and function declarations are moved to the top.
+// SCOPE: Global, function, block-level scope.
+// THIS: Context-based, varies by call site.
+// EVENT LOOP: Manages asynchronous execution.
+
+/*
+=========================
+    JavaScript Evolution
+=========================
+*/
+
+// ES5: Introduced JSON support, strict mode, and array methods.
+// ES6: Introduced let/const, arrow functions, classes, modules, and promises.
+// Later: async/await (2017), optional chaining (?.) (2020).
+
+/*
+=========================
+    JavaScript Uses
+=========================
+*/
+
+// WEB: Powers interactive websites (React, Vue.js).
+// SERVERS: Backend development (Node.js, Express).
+// MOBILE: Hybrid app development (React Native).
+// DESKTOP: Electron-based apps (VS Code, Slack).
+// GAMES: Game development (Phaser, Three.js).
+
+/*
+=========================
+    JavaScript Ecosystem
+=========================
+*/
+
+// ENGINES: JavaScript runs on engines like V8 (Chrome) and SpiderMonkey (Firefox).
+// TOOLS: Popular tools include npm (package manager), Webpack (module bundler), Babel (transpiler), Jest (testing).
+// LIBRARIES: Useful libraries include Lodash (utility functions), Axios (HTTP requests).
+
+/*
+=========================
+    JavaScript Strengths & Weaknesses
+=========================
+*/
+
+// STRENGTHS: Ubiquitous, flexible, allows fast prototyping, large community support.
+// WEAKNESSES: Loose typing, browser inconsistencies, exposed client-side code, slower than compiled languages.
+
+/*
+=========================
+    Learning JavaScript
+=========================
+*/
+
+// START WITH: Basics (variables, functions), practice DOM manipulation, build projects (to-do list, calculator, weather app).
+
+/*
+=========================
+    Fun Facts
+=========================
+*/
+
+console.log(typeof null); // "object" (bug in JS)
+console.log(NaN !== NaN); // true (NaN is not equal to itself)
